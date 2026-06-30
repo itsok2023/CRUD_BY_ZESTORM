@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Crud.Application/Crud.Application.csproj" />
+  <Project Path="Crud.Domain/Crud.Domain.csproj" />
+  <Project Path="Crud.Infrastructure/Crud.Infrastructure.csproj" />
+  <Project Path="Crud.UI/Crud.UI.csproj" />
+</Solution>

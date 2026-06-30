@@ -1,0 +1,38 @@
+﻿@using Crud.Domain
+@model List<Product>
+
+<div class="row">
+    <h2>Product List</h2>
+
+    <a asp-action="Create" asp-controller="Product" class="btn btn-primary col-md-2">Create New Product</a>
+    <a asp-action="Search" asp-controller="Product" class="btn btn-secondary col-md-2">Search Products</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Category Name</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>IsActive</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.ProductId</td>
+                    <td>@product.CategoryName</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.ProductPrice</td>
+                    <td>@product.IsActive</td>
+                    <td>
+                        <a asp-action="GetProductById" asp-controller="Product" asp-route-id="@product.ProductId" class="btn btn-sm btn-warning">Edit</a>
+                        <a asp-action="Delete" asp-controller="Product" asp-route-id="@product.ProductId" class="btn btn-sm btn-danger">Delete</a>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
